@@ -430,27 +430,6 @@
             font-size: 14px;
         }
 
-        .more-work {
-            display: grid;
-            grid-template-columns: 190px 1fr;
-            gap: 22px;
-            margin-top: 64px;
-            padding-top: 22px;
-            border-top: 1px solid #b5c9ba;
-        }
-
-        .more-work h3 {
-            margin: 0;
-            font-family: var(--heading);
-            font-size: 16px;
-        }
-
-        .more-work p {
-            margin: 0;
-            color: var(--ink-soft);
-            font-size: 14px;
-        }
-
         .foundation {
             background: var(--paper);
         }
@@ -779,12 +758,6 @@
                 font-size: 22px;
             }
 
-            .more-work {
-                grid-template-columns: 1fr;
-                gap: 9px;
-                margin-top: 46px;
-            }
-
             .module-list {
                 grid-template-columns: 1fr;
             }
@@ -957,10 +930,46 @@
                         <h3>DMCI Homes Projects</h3>
                         <p>Property projects, developments, and locations presented as structured information.</p>
                     </article>
-                </div>
-                <div class="more-work">
-                    <h3>More across the portfolio</h3>
-                    <p>GK1 World · InsuranceNewsNet · Reed Elsevier Philippines · MWRFO Premier · Cerulean</p>
+                    <article class="case-study">
+                        <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge GK1 World project screenshot">
+                            <img src="images/gk1world.com.jpg" alt="GK1 World community and participation platform">
+                        </button>
+                        <div class="case-meta"><span class="case-type">Community platform</span></div>
+                        <h3>GK1 World</h3>
+                        <p>Community information and participation brought together in an online platform.</p>
+                    </article>
+                    <article class="case-study">
+                        <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge InsuranceNewsNet project screenshot">
+                            <img src="images/insurancenewsnet.com.jpg" alt="InsuranceNewsNet insurance industry news publication">
+                        </button>
+                        <div class="case-meta"><span class="case-type">Industry publishing</span></div>
+                        <h3>InsuranceNewsNet</h3>
+                        <p>Specialized insurance news and editorial content organized for an industry audience.</p>
+                    </article>
+                    <article class="case-study">
+                        <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge Reed Elsevier Philippines project screenshot">
+                            <img src="images/reedelsevier.com.jpg" alt="Reed Elsevier Philippines corporate website">
+                        </button>
+                        <div class="case-meta"><span class="case-type">Corporate information</span></div>
+                        <h3>Reed Elsevier Philippines</h3>
+                        <p>Corporate services and career information presented for employees and prospective applicants.</p>
+                    </article>
+                    <article class="case-study">
+                        <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge MWRFO Premier project screenshot">
+                            <img src="images/mwrfopremier.com.png" alt="MWRFO Premier properties and locations portfolio">
+                        </button>
+                        <div class="case-meta"><span class="case-type">Property portfolio</span></div>
+                        <h3>MWRFO Premier</h3>
+                        <p>Properties, residences, and locations organized as an online portfolio.</p>
+                    </article>
+                    <article class="case-study">
+                        <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge Cerulean project screenshot">
+                            <img src="images/cerulean.com.ph.png" alt="Cerulean website project screenshot">
+                        </button>
+                        <div class="case-meta"><span class="case-type">Business website</span></div>
+                        <h3>Cerulean</h3>
+                        <p>A web presence built for the Cerulean business.</p>
+                    </article>
                 </div>
             </div>
         </section>
