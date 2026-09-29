@@ -1,0 +1,24 @@
+title: Ethanium
+email: ethanium@live.com
+phone: "+639957211660"
+linkedin: https://www.linkedin.com/in/teamethanium/
+description: Custom web portals that organize business data and automate manual workflows for B2B teams in Manila and beyond.
+url: https://ethanium.github.io
+baseurl: ""
+lang: en
+locale: en_PH
+permalink: /blog/:year/:month/:day/:title/
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<article class="post wrap">
+    <header class="post-header">
+        <a class="post-back" href="{{ '/blog/' | relative_url }}">← All articles</a>
+        <p class="post-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.categories.size > 0 %} · {{ page.categories | join: ", " | escape }}{% endif %}</p>
+        <h1>{{ page.title | escape }}</h1>
+        {% if page.description %}<p class="post-description">{{ page.description | escape }}</p>{% endif %}
+    </header>
+    <div class="post-content">{{ content }}</div>
+</article>

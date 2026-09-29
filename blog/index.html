@@ -1,0 +1,26 @@
+---
+layout: default
+title: Blog
+description: Notes from Ethanium on business workflows, data, web portals, and practical automation.
+permalink: /blog/
+---
+<section class="blog-page" aria-labelledby="blog-heading">
+    <header>
+        <p class="section-kicker">Ethanium Journal</p>
+        <h1 id="blog-heading">Notes on better business workflows.</h1>
+        <p>Practical ideas for organizing information, improving handoffs, and building useful business portals.</p>
+    </header>
+    {% if site.posts.size > 0 %}
+    <ol class="blog-list">
+        {% for post in site.posts %}
+        <li class="blog-entry">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+            <p>{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | escape }}</p>
+        </li>
+        {% endfor %}
+    </ol>
+    {% else %}
+    <p class="blog-empty">New articles are on the way.</p>
+    {% endif %}
+</section>
