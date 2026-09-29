@@ -418,14 +418,14 @@
             text-transform: uppercase;
         }
 
-        .case-study h3 {
-            margin: 5px 0 0;
-            font-size: 25px;
-        }
-
-        .case-study p {
-            max-width: 470px;
-            margin: 9px 0 0;
+        .case-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--ink);
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration-color: var(--coral);
+            text-underline-offset: 4px;
             color: var(--ink-soft);
             font-size: 14px;
         }
@@ -470,16 +470,6 @@
             height: 8px;
             flex: 0 0 8px;
             background: var(--coral);
-        }
-
-        .stack-line {
-            margin: 28px 0 0;
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        .stack-line strong {
-            color: var(--ink);
         }
 
         .engagement {
@@ -892,10 +882,10 @@
             <div class="wrap">
                 <div class="work-heading-row">
                     <div>
-                        <p class="section-kicker">Selected work</p>
+                        <p class="section-kicker">All projects</p>
                         <h2 class="section-heading">Business information, made useful.</h2>
                     </div>
-                    <p class="section-intro">A few examples of portals and information-rich systems across different industries.</p>
+                    <p class="section-intro">Nine projects across different industries, from property and booking to publishing and community platforms.</p>
                 </div>
                 <div class="case-grid">
                     <article class="case-study">
@@ -905,6 +895,7 @@
                         <div class="case-meta"><span class="case-type">People operations</span></div>
                         <h3>ACLT Computing</h3>
                         <p>HR information and employee services organized into an online platform.</p>
+                        <a class="case-link" href="https://aclt-computing.com/" target="_blank" rel="noopener noreferrer">Visit website</a>
                     </article>
                     <article class="case-study">
                         <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge Pinoy Backpackers project screenshot">
@@ -913,6 +904,7 @@
                         <div class="case-meta"><span class="case-type">Booking portal</span></div>
                         <h3>Pinoy Backpackers</h3>
                         <p>Accommodation discovery, property details, and a booking-oriented experience.</p>
+                        <a class="case-link" href="https://pinoybackpackers.com/" target="_blank" rel="noopener noreferrer">Visit website</a>
                     </article>
                     <article class="case-study">
                         <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge ProWater Technologies project screenshot">
@@ -921,6 +913,7 @@
                         <div class="case-meta"><span class="case-type">Product and service catalog</span></div>
                         <h3>ProWater Technologies</h3>
                         <p>Technical products, services, projects, and customer information in one catalog.</p>
+                        <a class="case-link" href="https://prowatertech.com/" target="_blank" rel="noopener noreferrer">Visit website</a>
                     </article>
                     <article class="case-study">
                         <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge DMCI Homes Projects screenshot">
@@ -929,6 +922,7 @@
                         <div class="case-meta"><span class="case-type">Property portal</span></div>
                         <h3>DMCI Homes Projects</h3>
                         <p>Property projects, developments, and locations presented as structured information.</p>
+                        <a class="case-link" href="https://www.dmcihomes.com/" target="_blank" rel="noopener noreferrer">Visit website</a>
                     </article>
                     <article class="case-study">
                         <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge GK1 World project screenshot">
@@ -937,6 +931,7 @@
                         <div class="case-meta"><span class="case-type">Community platform</span></div>
                         <h3>GK1 World</h3>
                         <p>Community information and participation brought together in an online platform.</p>
+                        <a class="case-link" href="https://gk1world.com/" target="_blank" rel="noopener noreferrer">Visit website</a>
                     </article>
                     <article class="case-study">
                         <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge InsuranceNewsNet project screenshot">
@@ -945,6 +940,7 @@
                         <div class="case-meta"><span class="case-type">Industry publishing</span></div>
                         <h3>InsuranceNewsNet</h3>
                         <p>Specialized insurance news and editorial content organized for an industry audience.</p>
+                        <a class="case-link" href="https://insurancenewsnet.com/" target="_blank" rel="noopener noreferrer">Visit website</a>
                     </article>
                     <article class="case-study">
                         <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge Reed Elsevier Philippines project screenshot">
@@ -953,6 +949,7 @@
                         <div class="case-meta"><span class="case-type">Corporate information</span></div>
                         <h3>Reed Elsevier Philippines</h3>
                         <p>Corporate services and career information presented for employees and prospective applicants.</p>
+                        <a class="case-link" href="https://www.reedelsevier.com/" target="_blank" rel="noopener noreferrer">Visit website</a>
                     </article>
                     <article class="case-study">
                         <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge MWRFO Premier project screenshot">
@@ -961,14 +958,16 @@
                         <div class="case-meta"><span class="case-type">Property portfolio</span></div>
                         <h3>MWRFO Premier</h3>
                         <p>Properties, residences, and locations organized as an online portfolio.</p>
+                        <a class="case-link" href="https://mwrfopremier.com/" target="_blank" rel="noopener noreferrer">Visit website</a>
                     </article>
                     <article class="case-study">
-                        <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge Cerulean project screenshot">
-                            <img src="images/cerulean.com.ph.png" alt="Cerulean website project screenshot">
+                        <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge Cerulean Residences project screenshot">
+                            <img src="images/cerulean.com.ph.png" alt="Cerulean Residences property website">
                         </button>
-                        <div class="case-meta"><span class="case-type">Business website</span></div>
-                        <h3>Cerulean</h3>
-                        <p>A web presence built for the Cerulean business.</p>
+                        <div class="case-meta"><span class="case-type">Residential property</span></div>
+                        <h3>Cerulean Residences</h3>
+                        <p>Residential properties and community details presented online.</p>
+                        <a class="case-link" href="https://cerulean.com.ph/" target="_blank" rel="noopener noreferrer">Visit website</a>
                     </article>
                 </div>
             </div>
@@ -980,7 +979,6 @@
                     <p class="section-kicker">A practical foundation</p>
                     <h2 class="section-heading">Start with one workflow. Leave room to grow.</h2>
                     <p class="section-intro">Portals can combine the building blocks your operation needs, without forcing every team into the same template.</p>
-                    <p class="stack-line"><strong>Tools:</strong> ASP.NET · C# · VB.NET · Angular · React</p>
                 </div>
                 <ul class="module-list" aria-label="Common portal capabilities">
                     <li><span class="module-mark" aria-hidden="true"></span>Users and access roles</li>
