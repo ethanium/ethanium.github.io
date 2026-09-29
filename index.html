@@ -1,243 +1,1034 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Web Design and Development Manila</title>
+    <title>Ethanium | Custom Business Portals</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="description" content="Ethanium builds custom web portals that organize business data and automate manual workflows.">
+    <meta name="theme-color" content="#153b3b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body, h1, h2, h3, h4, h5, h6 {
-            font-family: "Raleway", sans-serif
+        :root {
+            color-scheme: light;
+            --ink: #153b3b;
+            --ink-soft: #315454;
+            --paper: #f4f5ef;
+            --white: #fff;
+            --line: #c8d2ca;
+            --leaf: #dce9df;
+            --coral: #e76e52;
+            --yellow: #f2cd67;
+            --muted: #667875;
+            --heading: "Space Grotesk", sans-serif;
+            --body: "DM Sans", sans-serif;
         }
 
-        body, html {
-            height: 100%;
-            line-height: 1.8;
+        * {
+            box-sizing: border-box;
         }
 
-        .bgimg-1 {
-            background-position: center;
-            background-size: cover;
-            background-image: url("https://www.w3schools.com/w3images/mac.jpg");
-            min-height: 100%;
+        html {
+            scroll-behavior: smooth;
         }
 
-        .w3-bar .w3-button {
-            padding: 16px;
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: var(--body);
+            line-height: 1.6;
         }
 
-        .crop-height {
-            /* max-width: 1200px; /* img src width (if known) */
-            max-height: 300px;
+        a {
+            color: inherit;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -60px;
+            left: 16px;
+            z-index: 10;
+            padding: 10px 14px;
+            background: var(--yellow);
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        .skip-link:focus {
+            top: 12px;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .wrap {
+            width: min(1160px, calc(100% - 48px));
+            margin-inline: auto;
+        }
+
+        .site-header {
+            position: relative;
+            z-index: 2;
+            background: var(--paper);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .header-inner {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            text-decoration: none;
+            font-family: var(--heading);
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .brand-mark {
+            display: grid;
+            width: 34px;
+            aspect-ratio: 1;
+            place-items: center;
+            background: var(--coral);
+            color: var(--ink);
+            font-size: 19px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+        }
+
+        .nav-links a:hover,
+        .text-link:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .nav-contact {
+            padding: 10px 15px;
+            background: var(--ink);
+            color: var(--white);
+        }
+
+        .hero {
             overflow: hidden;
+            background: var(--ink);
+            color: var(--paper);
         }
 
-            .crop-height img {
-                /* corrects inline gap in enclosing div */
-                display: block;
+        .hero-grid {
+            min-height: 570px;
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            align-items: center;
+            gap: 56px;
+            padding-block: 70px 58px;
+        }
+
+        .eyebrow,
+        .section-kicker {
+            margin: 0 0 16px;
+            color: var(--coral);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero h1,
+        .section-heading,
+        .case-study h3,
+        .contact h2 {
+            font-family: var(--heading);
+            font-weight: 600;
+            line-height: 1.08;
+        }
+
+        .hero h1 {
+            max-width: 660px;
+            margin: 0;
+            font-size: clamp(44px, 6vw, 76px);
+        }
+
+        .hero h1 span {
+            color: var(--yellow);
+        }
+
+        .hero-copy {
+            max-width: 580px;
+            margin: 22px 0 0;
+            color: #d0ddda;
+            font-size: 18px;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-top: 30px;
+        }
+
+        .button-primary {
+            display: inline-flex;
+            min-height: 48px;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            background: var(--coral);
+            color: var(--ink);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .text-link {
+            color: inherit;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .hero-visual {
+            position: relative;
+            padding: 26px 0 0 28px;
+            animation: rise-in .7s ease-out both;
+        }
+
+        .hero-visual::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 36%;
+            height: 36%;
+            background: var(--coral);
+            content: "";
+        }
+
+        .hero-image-frame {
+            position: relative;
+            display: grid;
+            min-height: 300px;
+            aspect-ratio: 1.48;
+            place-items: center;
+            overflow: hidden;
+            background: #e9eeea;
+            box-shadow: 14px 14px 0 var(--yellow);
+        }
+
+        .hero-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .image-label {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+            padding: 7px 10px;
+            background: var(--ink);
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .hero-note {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            margin-top: 27px;
+            color: #cfddda;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .signal-strip {
+            background: var(--yellow);
+            color: var(--ink);
+        }
+
+        .signal-inner {
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            font-family: var(--heading);
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .signal-inner p {
+            margin: 0;
+        }
+
+        .signal-label {
+            color: var(--ink-soft);
+            font-family: var(--body);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .section {
+            padding-block: 104px;
+        }
+
+        .section-heading {
+            max-width: 730px;
+            margin: 0;
+            font-size: clamp(36px, 4vw, 54px);
+        }
+
+        .section-intro {
+            max-width: 620px;
+            margin: 18px 0 0;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .workflow {
+            background: var(--white);
+        }
+
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 54px;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .step {
+            min-height: 198px;
+            padding: 25px 22px 26px 0;
+        }
+
+        .step + .step {
+            padding-left: 22px;
+            border-left: 1px solid var(--line);
+        }
+
+        .step-number {
+            display: inline-block;
+            margin-bottom: 26px;
+            color: var(--coral);
+            font-family: var(--heading);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .step h3 {
+            margin: 0;
+            font-family: var(--heading);
+            font-size: 20px;
+        }
+
+        .step p {
+            margin: 9px 0 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .work-section {
+            background: var(--leaf);
+        }
+
+        .work-heading-row {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 48px 28px;
+            margin-top: 54px;
+        }
+
+        .case-study {
+            min-width: 0;
+        }
+
+        .case-preview {
+            position: relative;
+            display: block;
+            width: 100%;
+            aspect-ratio: 1.57;
+            padding: 0;
+            overflow: hidden;
+            border: 0;
+            background: #f9faf7;
+            cursor: zoom-in;
+        }
+
+        .case-preview img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform .35s ease;
+        }
+
+        .case-preview:hover img {
+            transform: scale(1.025);
+        }
+
+        .case-preview:focus-visible,
+        .button-primary:focus-visible,
+        .nav-links a:focus-visible,
+        .text-link:focus-visible {
+            outline: 3px solid var(--coral);
+            outline-offset: 4px;
+        }
+
+        .case-meta {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 19px;
+        }
+
+        .case-type {
+            color: var(--ink-soft);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .case-study h3 {
+            margin: 5px 0 0;
+            font-size: 25px;
+        }
+
+        .case-study p {
+            max-width: 470px;
+            margin: 9px 0 0;
+            color: var(--ink-soft);
+            font-size: 14px;
+        }
+
+        .more-work {
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 22px;
+            margin-top: 64px;
+            padding-top: 22px;
+            border-top: 1px solid #b5c9ba;
+        }
+
+        .more-work h3 {
+            margin: 0;
+            font-family: var(--heading);
+            font-size: 16px;
+        }
+
+        .more-work p {
+            margin: 0;
+            color: var(--ink-soft);
+            font-size: 14px;
+        }
+
+        .foundation {
+            background: var(--paper);
+        }
+
+        .foundation-grid {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .module-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            border-top: 1px solid var(--line);
+        }
+
+        .module-list li {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 8px 14px 0;
+            border-bottom: 1px solid var(--line);
+            font-weight: 600;
+        }
+
+        .module-list li:nth-child(even) {
+            padding-left: 16px;
+            border-left: 1px solid var(--line);
+        }
+
+        .module-mark {
+            width: 8px;
+            height: 8px;
+            flex: 0 0 8px;
+            background: var(--coral);
+        }
+
+        .stack-line {
+            margin: 28px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .stack-line strong {
+            color: var(--ink);
+        }
+
+        .engagement {
+            padding-block: 74px;
+            background: var(--coral);
+        }
+
+        .engagement-inner {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .engagement .section-kicker {
+            margin-bottom: 11px;
+            color: var(--ink-soft);
+        }
+
+        .engagement h2 {
+            max-width: 750px;
+            margin: 0;
+            font-family: var(--heading);
+            font-size: clamp(30px, 4vw, 46px);
+            line-height: 1.12;
+        }
+
+        .engagement p:not(.section-kicker) {
+            max-width: 680px;
+            margin: 14px 0 0;
+            color: #3f514b;
+        }
+
+        .engagement .button-primary {
+            min-width: 178px;
+            background: var(--ink);
+            color: var(--white);
+        }
+
+        .contact {
+            padding-block: 78px 44px;
+            background: var(--ink);
+            color: var(--paper);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact h2 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .contact-copy {
+            max-width: 460px;
+            color: #cfddda;
+        }
+
+        .contact-links {
+            display: grid;
+            align-content: center;
+            justify-items: start;
+            gap: 12px;
+        }
+
+        .contact-links a {
+            text-decoration-color: #7d9a93;
+            text-underline-offset: 4px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 64px;
+            padding-top: 18px;
+            border-top: 1px solid #426260;
+            color: #b6c9c4;
+            font-size: 12px;
+        }
+
+        .project-modal {
+            width: min(1100px, calc(100% - 32px));
+            max-width: none;
+            max-height: calc(100% - 32px);
+            padding: 24px;
+            border: 0;
+            background: var(--ink);
+            color: var(--white);
+        }
+
+        .project-modal::backdrop {
+            background: rgb(8 24 24 / 88%);
+        }
+
+        .modal-close {
+            display: block;
+            margin: 0 0 12px auto;
+            padding: 6px 10px;
+            border: 1px solid #6b8581;
+            background: transparent;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        .project-modal img {
+            display: block;
+            width: 100%;
+            max-height: calc(100vh - 110px);
+            object-fit: contain;
+        }
+
+        .project-modal p {
+            margin: 10px 0 0;
+            text-align: center;
+        }
+
+        @keyframes rise-in {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 800px) {
+            .hero-grid {
+                min-height: 0;
+                grid-template-columns: 1fr 1fr;
+                gap: 34px;
+                padding-block: 58px;
+            }
+
+            .hero h1 {
+                font-size: clamp(42px, 7vw, 62px);
+            }
+
+            .hero-visual {
+                padding-left: 16px;
+            }
+
+            .hero-image-frame {
+                min-height: 220px;
+            }
+
+            .section {
+                padding-block: 78px;
+            }
+
+            .foundation-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .wrap {
+                width: min(100% - 36px, 480px);
+            }
+
+            .header-inner {
+                min-height: 68px;
+                flex-wrap: wrap;
+                gap: 12px;
+                padding-block: 10px;
+            }
+
+            .brand {
+                font-size: 15px;
+            }
+
+            .nav-links {
+                gap: 14px;
+                font-size: 12px;
+            }
+
+            .nav-links a:nth-child(1) {
+                display: none;
+            }
+
+            .nav-contact {
+                padding: 8px 10px;
+            }
+
+            .hero-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 36px;
+                padding-block: 54px 48px;
+            }
+
+            .hero-grid > div:first-child {
+                min-width: 0;
+            }
+
+            .hero h1 {
+                width: 100%;
                 max-width: 100%;
-                /* just in case, to force correct aspect ratio */
-                height: auto !important;
-                width: auto\9; /* ie8+9 */
-                /* lt ie8 */
-                -ms-interpolation-mode: bicubic;
+                font-size: clamp(43px, 12vw, 60px);
+                overflow-wrap: anywhere;
+            }
+
+            .hero-copy {
+                font-size: 16px;
+            }
+
+            .hero-visual {
+                max-width: 500px;
+            }
+
+            .hero-image-frame {
+                min-height: 0;
+            }
+
+            .hero-note {
+                font-size: 10px;
+            }
+
+            .signal-inner {
+                min-height: 0;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 4px 16px;
+                padding-block: 17px;
+                font-size: 14px;
+            }
+
+            .signal-label {
+                width: 100%;
+            }
+
+            .section {
+                padding-block: 66px;
+            }
+
+            .section-heading {
+                font-size: 38px;
+            }
+
+            .step-grid {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 34px;
+            }
+
+            .step {
+                min-height: 170px;
+                padding: 18px 14px 20px 0;
+            }
+
+            .step + .step {
+                padding-left: 14px;
+            }
+
+            .step:nth-child(3) {
+                border-left: 0;
+            }
+
+            .step:nth-child(n + 3) {
+                border-top: 1px solid var(--line);
+            }
+
+            .step-number {
+                margin-bottom: 18px;
+            }
+
+            .work-heading-row {
+                display: block;
+            }
+
+            .case-grid {
+                grid-template-columns: 1fr;
+                gap: 34px;
+                margin-top: 36px;
+            }
+
+            .case-study h3 {
+                font-size: 22px;
+            }
+
+            .more-work {
+                grid-template-columns: 1fr;
+                gap: 9px;
+                margin-top: 46px;
+            }
+
+            .module-list {
+                grid-template-columns: 1fr;
+            }
+
+            .module-list li:nth-child(even) {
+                padding-left: 0;
+                border-left: 0;
+            }
+
+            .module-list li {
+                min-height: 58px;
+            }
+
+            .engagement {
+                padding-block: 58px;
+            }
+
+            .engagement-inner,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 26px;
+            }
+
+            .engagement .button-primary {
+                justify-self: start;
+            }
+
+            .contact h2 {
+                font-size: 34px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 5px;
+                margin-top: 44px;
+            }
+
+            .project-modal {
+                padding: 12px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
             }
     </style>
 </head>
 <body>
-    <!-- Navbar (sit on top) -->
-    <div class="w3-top">
-        <div class="w3-bar w3-white w3-card" id="myNavbar">
-            <a href="https://ethanium.github.io" class="w3-bar-item w3-button w3-wide">TEAM ETHANIUM</a>
-            <!-- Right-sided navbar links -->
-            <div class="w3-right w3-hide-small">
-                <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
-                <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
-                <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
-            </div>
-            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
-            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-                <i class="fa fa-bars"></i>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a class="brand" href="#top" aria-label="Ethanium home">
+                <span class="brand-mark" aria-hidden="true">E</span>
+                <span>ETHANIUM</span>
             </a>
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="#approach">Approach</a>
+                <a href="#work">Selected work</a>
+                <a class="nav-contact" href="#contact">Start a conversation</a>
+            </nav>
         </div>
-    </div>
+    </header>
 
-    <!-- Sidebar on small screens when clicking the menu icon -->
-    <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-        <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
-        <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-        <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
-        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
-    </nav>
-    <div class="w3-container" style="padding:128px 16px" id="work">
-        <h3 class="w3-center">OUR WORK</h3>
-        <p class="w3-center w3-large">What we've done for people</p>
-
-        <div class="w3-row-padding" style="margin-top:64px">
-            <div class="w3-col l3 m6 crop-height">
-                <img src="images/aclt-computing.com.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="aclt-computing.com">
-            </div>
-            <div class="w3-col l3 m6 crop-height">
-                <img src="images/gk1world.com.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="gk1world.com">
-            </div>
-            <div class="w3-col l3 m6 crop-height">
-                <img src="images/insurancenewsnet.com.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="insurancenewsnet.com">
-            </div>
-            <div class="w3-col l3 m6 crop-height">
-                <img src="images/pinoybackpackers.com.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="pinoybackpackers.com">
-            </div>
-        </div>
-
-        <div class="w3-row-padding w3-section">
-            <div class="w3-col l3 m6 crop-height">
-                <img src="images/reedelsevier.com.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="reedelsevier.com">
-            </div>
-            <div class="w3-col l3 m6 crop-height">
-                <img src="images/prowatertech.com.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="prowatertech.com">
-            </div>
-            <div class="w3-col l3 m6 crop-height">
-                <img src="images/dmcihomesprojects.ph.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="dmcihomesprojects.ph">
-            </div>
-            <div class="w3-col l3 m6 crop-height">
-                <img src="images/mwrfopremier.com.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="mwrfopremier.com">
-            </div>
-            <div class="w3-col l3 m6 crop-height">
-                <img src="images/cerulean.com.ph.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="cerulean.com.ph">
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for full size images on click-->
-    <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-        <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
-        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-            <img id="img01" class="w3-image">
-            <p id="caption" class="w3-opacity w3-large"></p>
-        </div>
-    </div>
-
-    <!-- Skills Section -->
-    <div class="w3-container w3-light-grey w3-padding-64">
-        <div class="w3-row-padding">
-            <div class="w3-col m6">
-                <h3>Skills.</h3>
-                <p>
-                    ASP.NET, C#, VB.NET
-                </p>
-                <p>
-                    Angular, React
-                </p>
-            </div>
-            <div class="w3-col m6">
-                <p class="w3-wide"><i class="fa fa-code w3-margin-right"></i>Web Development (Back-end)</p>
-                <div class="w3-grey">
-                    <div class="w3-container w3-dark-grey w3-center" style="width:90%">90%</div>
+    <main id="main">
+        <section class="hero" id="top">
+            <div class="wrap hero-grid">
+                <div>
+                    <p class="eyebrow">Custom business software · Manila, Philippines</p>
+                    <h1>Business work that has <span>outgrown spreadsheets.</span></h1>
+                    <p class="hero-copy">We help B2B teams replace spreadsheet- and email-heavy operations with custom portals that organize business data and automate everyday workflows.</p>
+                    <div class="hero-actions">
+                        <a class="button-primary" href="#contact">Talk through a workflow</a>
+                        <a class="text-link" href="#work">Explore selected work</a>
+                    </div>
                 </div>
-                <p class="w3-wide"><i class="fa fa-code w3-margin-right"></i>Web Design (Front-end)</p>
-                <div class="w3-grey">
-                    <div class="w3-container w3-dark-grey w3-center" style="width:85%">85%</div>
+                <div class="hero-visual">
+                    <div class="hero-image-frame">
+                        <img src="images/dmcihomesprojects.ph.png" alt="DMCI Homes Projects property portal screenshot">
+                        <span class="image-label">Property information portal</span>
+                    </div>
+                </div>
+                <div class="hero-note">
+                    <span>Portals · Workflow applications · Integrations</span>
+                    <span>Built around how your team works</span>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Pricing Section -->
-    <div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="pricing">
-        <h3>PRICING</h3>
-        <p class="w3-large">Choose a pricing plan that fits your needs.</p>
-        <div class="w3-row-padding" style="margin-top:64px">
-            <div class="w3-third w3-section">
-                <ul class="w3-ul w3-white w3-hover-shadow">
-                    <li class="w3-black w3-xlarge w3-padding-32" style="background-color: #fe0000 !important;">Basic</li>
-                    <li class="w3-padding-16"><b>Static</b> Website</li>
-                    <li class="w3-padding-16"><b>1 Year</b> Support</li>
-                    <li class="w3-padding-16">
-                        <h2 class="w3-wide">$ 275</h2>
-                        <span class="w3-opacity">per year</span>
-                    </li>
-                    <li class="w3-light-grey w3-padding-24">
-                        <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-                    </li>
-                </ul>
-            </div>
-            <div class="w3-third">
-                <ul class="w3-ul w3-white w3-hover-shadow">
-                    <li class="w3-red w3-xlarge w3-padding-48" style="background-color: #00b003 !important;">Pro</li>
-                    <li class="w3-padding-16"><b>Dynamic</b> Website</li>
-                    <li class="w3-padding-16"><b>1 Year</b> Support</li>
-                    <li class="w3-padding-16">
-                        <h2 class="w3-wide">$ 725</h2>
-                        <span class="w3-opacity">per year</span>
-                    </li>
-                    <li class="w3-light-grey w3-padding-24">
-                        <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-                    </li>
-                </ul>
-            </div>
-            <div class="w3-third w3-section">
-                <ul class="w3-ul w3-white w3-hover-shadow">
-                    <li class="w3-black w3-xlarge w3-padding-32" style="background-color: #24155a !important;">Premium</li>
-                    <li class="w3-padding-16"><b>Enterprise</b> Website</li>
-                    <li class="w3-padding-16"><b>1 Year</b> Support</li>
-                    <li class="w3-padding-16">
-                        <h2 class="w3-wide">$ 1500</h2>
-                        <span class="w3-opacity">per year</span>
-                    </li>
-                    <li class="w3-light-grey w3-padding-24">
-                        <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Contact Section -->
-    <div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
-        <h3 class="w3-center">CONTACT</h3>
-        <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
-        <div style="margin-top:48px; text-align: center">
-            <a class="w3-margin-right" style="text-decoration: none;"><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Manila, PH</a>
-            <a class="w3-margin-right" href="tel:+639957211660" style="text-decoration: none;"><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> +639957211660</a>
-            <a class="w3-margin-right" href="mailto:christian.escopete@yahoo.com" style="text-decoration: none;"><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"></i> christian.escopete@yahoo.com</a>
-            <a class="w3-margin-right" href="https://www.linkedin.com/in/teamethanium/" target="_blank" style="text-decoration: none;"><i class="fa fa-linkedin fa-fw w3-xxlarge w3-margin-right"></i> linkedin.com/in/teamethanium</a>
+        <div class="signal-strip" aria-label="Common disconnected business tools">
+            <div class="wrap signal-inner">
+                <span class="signal-label">When work is spread across</span>
+                <p>Excel</p><p>Email</p><p>PDFs</p><p>Legacy tools</p>
+                <p>Bring the workflow together.</p>
+            </div>
         </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="w3-center w3-black w3-padding-64">
-        <a href="#" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-        <div class="w3-xlarge w3-section">
-        </div>
-    </footer>
+        <section class="section workflow" id="approach">
+            <div class="wrap">
+                <p class="section-kicker">From process to portal</p>
+                <h2 class="section-heading">Make the work easier to see, move, and improve.</h2>
+                <p class="section-intro">A useful business application connects the information people need with the steps they take every day.</p>
+                <div class="step-grid">
+                    <article class="step">
+                        <span class="step-number">01</span>
+                        <h3>Map the work</h3>
+                        <p>Understand the handoffs, repeated tasks, and friction in one real process.</p>
+                    </article>
+                    <article class="step">
+                        <span class="step-number">02</span>
+                        <h3>Structure the data</h3>
+                        <p>Bring scattered records into a consistent, useful shape.</p>
+                    </article>
+                    <article class="step">
+                        <span class="step-number">03</span>
+                        <h3>Build the portal</h3>
+                        <p>Give the team a clear place to find information and move work forward.</p>
+                    </article>
+                    <article class="step">
+                        <span class="step-number">04</span>
+                        <h3>Automate and evolve</h3>
+                        <p>Connect systems and add the next useful module as needs become clear.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section work-section" id="work">
+            <div class="wrap">
+                <div class="work-heading-row">
+                    <div>
+                        <p class="section-kicker">Selected work</p>
+                        <h2 class="section-heading">Business information, made useful.</h2>
+                    </div>
+                    <p class="section-intro">A few examples of portals and information-rich systems across different industries.</p>
+                </div>
+                <div class="case-grid">
+                    <article class="case-study">
+                        <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge ACLT Computing project screenshot">
+                            <img src="images/aclt-computing.com.jpg" alt="ACLT Computing HR and employee services platform">
+                        </button>
+                        <div class="case-meta"><span class="case-type">People operations</span></div>
+                        <h3>ACLT Computing</h3>
+                        <p>HR information and employee services organized into an online platform.</p>
+                    </article>
+                    <article class="case-study">
+                        <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge Pinoy Backpackers project screenshot">
+                            <img src="images/pinoybackpackers.com.jpg" alt="Pinoy Backpackers accommodation discovery and booking website">
+                        </button>
+                        <div class="case-meta"><span class="case-type">Booking portal</span></div>
+                        <h3>Pinoy Backpackers</h3>
+                        <p>Accommodation discovery, property details, and a booking-oriented experience.</p>
+                    </article>
+                    <article class="case-study">
+                        <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge ProWater Technologies project screenshot">
+                            <img src="images/prowatertech.com.jpg" alt="ProWater Technologies product and service catalog">
+                        </button>
+                        <div class="case-meta"><span class="case-type">Product and service catalog</span></div>
+                        <h3>ProWater Technologies</h3>
+                        <p>Technical products, services, projects, and customer information in one catalog.</p>
+                    </article>
+                    <article class="case-study">
+                        <button class="case-preview" type="button" onclick="onClick(this.querySelector('img'))" aria-label="Enlarge DMCI Homes Projects screenshot">
+                            <img src="images/dmcihomesprojects.ph.png" alt="DMCI Homes Projects property and development portal">
+                        </button>
+                        <div class="case-meta"><span class="case-type">Property portal</span></div>
+                        <h3>DMCI Homes Projects</h3>
+                        <p>Property projects, developments, and locations presented as structured information.</p>
+                    </article>
+                </div>
+                <div class="more-work">
+                    <h3>More across the portfolio</h3>
+                    <p>GK1 World · InsuranceNewsNet · Reed Elsevier Philippines · MWRFO Premier · Cerulean</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section foundation">
+            <div class="wrap foundation-grid">
+                <div>
+                    <p class="section-kicker">A practical foundation</p>
+                    <h2 class="section-heading">Start with one workflow. Leave room to grow.</h2>
+                    <p class="section-intro">Portals can combine the building blocks your operation needs, without forcing every team into the same template.</p>
+                    <p class="stack-line"><strong>Tools:</strong> ASP.NET · C# · VB.NET · Angular · React</p>
+                </div>
+                <ul class="module-list" aria-label="Common portal capabilities">
+                    <li><span class="module-mark" aria-hidden="true"></span>Users and access roles</li>
+                    <li><span class="module-mark" aria-hidden="true"></span>Search and filtering</li>
+                    <li><span class="module-mark" aria-hidden="true"></span>Data import and export</li>
+                    <li><span class="module-mark" aria-hidden="true"></span>Approvals and notifications</li>
+                    <li><span class="module-mark" aria-hidden="true"></span>Reports and audit trails</li>
+                    <li><span class="module-mark" aria-hidden="true"></span>APIs and scheduled tasks</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="engagement">
+            <div class="wrap engagement-inner">
+                <div>
+                    <p class="section-kicker">A focused first step</p>
+                    <h2>Replace one manual workflow with a useful first release.</h2>
+                    <p>We’ll define the process, scope a practical starting point, and tailor the project around what your team needs. Ongoing support can be arranged separately.</p>
+                </div>
+                <a class="button-primary" href="mailto:christian.escopete@yahoo.com?subject=Business%20portal%20project">Discuss a project</a>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="wrap">
+                <div class="contact-grid">
+                    <div>
+                        <p class="section-kicker">Contact</p>
+                        <h2>Tell us where work gets stuck.</h2>
+                        <p class="contact-copy">Share the spreadsheet, handoff, or repeated task you’d most like to improve. We’re based in Manila and work with teams remotely.</p>
+                    </div>
+                    <div class="contact-links">
+                        <a href="mailto:christian.escopete@yahoo.com">christian.escopete@yahoo.com</a>
+                        <a href="tel:+639957211660">+63 995 721 1660</a>
+                        <a href="https://www.linkedin.com/in/teamethanium/" target="_blank" rel="noopener noreferrer">LinkedIn · Team Ethanium</a>
+                    </div>
+                </div>
+                <footer class="footer-bottom">
+                    <span>ETHANIUM · Custom business software</span>
+                    <a href="#top">Back to top</a>
+                </footer>
+            </div>
+        </section>
+    </main>
+
+    <dialog class="project-modal" id="project-modal" aria-label="Project screenshot preview">
+        <form method="dialog"><button class="modal-close" aria-label="Close image preview">Close</button></form>
+        <img id="modal-image" src="images/aclt-computing.com.jpg" alt="ACLT Computing project screenshot">
+        <p id="modal-caption"></p>
+    </dialog>
 
     <script>
-        // Modal Image Gallery
-        function onClick(element) {
-            document.getElementById("img01").src = element.src;
-            document.getElementById("modal01").style.display = "block";
-            var captionText = document.getElementById("caption");
-            captionText.innerHTML = element.alt;
-        }
-
-
-        // Toggle between showing and hiding the sidebar when clicking the menu icon
-        var mySidebar = document.getElementById("mySidebar");
-
-        function w3_open() {
-            if (mySidebar.style.display === 'block') {
-                mySidebar.style.display = 'none';
-            } else {
-                mySidebar.style.display = 'block';
-            }
-        }
-
-        // Close the sidebar with the close button
-        function w3_close() {
-            mySidebar.style.display = "none";
+        function onClick(image) {
+            document.getElementById("modal-image").src = image.src;
+            document.getElementById("modal-image").alt = image.alt;
+            document.getElementById("modal-caption").textContent = image.alt;
+            document.getElementById("project-modal").showModal();
         }
     </script>
 
