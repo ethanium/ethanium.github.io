@@ -7,6 +7,7 @@ url: https://ethanium.github.io
 baseurl: ""
 lang: en
 locale: en_PH
+google_tag_id: "G-4X4HS3E82D"
 permalink: /blog/:year/:month/:day/:title/
 markdown: kramdown
 plugins:
