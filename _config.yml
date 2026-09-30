@@ -8,6 +8,7 @@ baseurl: ""
 lang: en
 locale: en_PH
 google_tag_id: "G-4X4HS3E82D"
+microsoft_clarity_id: "yqdppzvhb4"
 permalink: /blog/:year/:month/:day/:title/
 markdown: kramdown
 plugins:

@@ -19,7 +19,7 @@ Edit `_data/projects.yml`. Each project entry provides its title, category, desc
 
 ## Enable Google tag
 
-In `_config.yml`, set `google_tag_id` to the tag ID provided by Google, such as `G-XXXXXXXXXX` for Google Analytics or `AW-XXXXXXXXX` for Google Ads. The tag is then added to every page through the shared layout.
+In `_config.yml`, set `google_tag_id` to the tag ID provided by Google, such as `G-XXXXXXXXXX` for Google Analytics or `AW-XXXXXXXXX` for Google Ads. Set `microsoft_clarity_id` to the Microsoft Clarity project ID. Both tags are added to every page through the shared layout.
 
 ## Publish a blog post
 
