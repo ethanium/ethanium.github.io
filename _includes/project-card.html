@@ -1,6 +1,7 @@
 <article class="case-study">
     <button class="case-preview" type="button" data-project-preview aria-label="Preview {{ include.project.title | escape }} screenshot">
         <img src="{{ include.project.image | relative_url }}" alt="{{ include.project.image_alt | escape }}" loading="lazy" decoding="async">
+        <span class="case-preview-hint" aria-hidden="true">Preview</span>
     </button>
     <div class="case-meta"><span class="case-type">{{ include.project.category | escape }}</span></div>
     <h3>{{ include.project.title | escape }}</h3>

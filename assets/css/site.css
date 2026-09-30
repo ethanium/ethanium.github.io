@@ -5,9 +5,7 @@
             --paper: #fff;
             --white: #f5f5f7;
             --line: #d2d2d7;
-            --leaf: #fff;
             --coral: #06c;
-            --yellow: #f5f5f7;
             --muted: #6e6e73;
             --heading: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             --body: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -22,15 +20,22 @@
         }
 
         body {
+            min-width: 320px;
             margin: 0;
             background: var(--paper);
             color: var(--ink);
             font-family: var(--body);
             line-height: 1.5;
+            text-rendering: optimizeLegibility;
         }
 
         a {
             color: inherit;
+            text-decoration-thickness: 1px;
+        }
+
+        img {
+            max-width: 100%;
         }
 
         .skip-link {
@@ -39,7 +44,7 @@
             left: 16px;
             z-index: 10;
             padding: 10px 14px;
-            background: var(--yellow);
+            background: var(--white);
             color: var(--ink);
             font-weight: 700;
         }
@@ -50,6 +55,11 @@
 
         button {
             font: inherit;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--coral);
+            outline-offset: 4px;
         }
 
         .wrap {
@@ -79,6 +89,7 @@
             font-family: var(--heading);
             font-size: 15px;
             font-weight: 600;
+            letter-spacing: -.01em;
         }
 
         .nav-links {
@@ -94,6 +105,7 @@
         }
 
         .nav-links a:hover,
+        .nav-links a[aria-current="page"],
         .text-link:hover {
             text-decoration: underline;
             text-underline-offset: 4px;
@@ -118,6 +130,7 @@
             justify-items: center;
             gap: 30px;
             padding-block: 76px 64px;
+            text-align: center;
         }
 
         .eyebrow,
@@ -139,9 +152,10 @@
 
         .hero h1 {
             max-width: 850px;
-            margin: 0;
+            margin: 0 auto;
             font-size: clamp(42px, 5.5vw, 68px);
             line-height: 1.08;
+            letter-spacing: -.035em;
         }
 
         .hero h1 span {
@@ -153,6 +167,7 @@
             margin: 20px auto 0;
             color: var(--muted);
             font-size: 19px;
+            line-height: 1.45;
         }
 
         .hero-actions {
@@ -228,6 +243,7 @@
         .signal-strip {
             background: var(--white);
             color: var(--ink);
+            border-block: 1px solid var(--line);
         }
 
         .signal-inner {
@@ -261,6 +277,7 @@
             max-width: 730px;
             margin: 0;
             font-size: clamp(36px, 4vw, 54px);
+            letter-spacing: -.03em;
         }
 
         .section-intro {
@@ -268,6 +285,7 @@
             margin: 18px 0 0;
             color: var(--muted);
             font-size: 17px;
+            line-height: 1.55;
         }
 
         .workflow {
@@ -359,13 +377,26 @@
             transform: scale(1.01);
         }
 
-        .case-preview:focus-visible,
-        .button-primary:focus-visible,
-        .nav-links a:focus-visible,
-        .case-link:focus-visible,
-        .text-link:focus-visible {
-            outline: 2px solid var(--coral);
-            outline-offset: 4px;
+        .case-preview-hint {
+            position: absolute;
+            right: 14px;
+            bottom: 14px;
+            padding: 6px 10px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgb(255 255 255 / 94%);
+            color: var(--ink);
+            font-size: 12px;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(4px);
+            transition: opacity .2s ease, transform .2s ease;
+        }
+
+        .case-preview:hover .case-preview-hint,
+        .case-preview:focus-visible .case-preview-hint {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .case-meta {
@@ -380,6 +411,20 @@
             color: var(--muted);
             font-size: 12px;
             font-weight: 400;
+        }
+
+        .case-study h3 {
+            margin: 8px 0 0;
+            font-size: 22px;
+            letter-spacing: -.02em;
+        }
+
+        .case-study p {
+            max-width: 500px;
+            margin: 9px 0 0;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.5;
         }
 
         .case-link {
@@ -562,8 +607,10 @@
             max-height: calc(100% - 32px);
             padding: 24px;
             border: 0;
+            border-radius: 16px;
             background: var(--paper);
             color: var(--ink);
+            box-shadow: 0 20px 60px rgb(0 0 0 / 18%);
         }
 
         .project-modal::backdrop {
@@ -572,12 +619,20 @@
 
         .modal-close {
             display: block;
+            min-height: 36px;
             margin: 0 0 12px auto;
             padding: 6px 10px;
             border: 1px solid var(--line);
-            background: transparent;
+            border-radius: 999px;
+            background: var(--paper);
             color: var(--ink);
             cursor: pointer;
+            transition: background-color .2s ease, border-color .2s ease;
+        }
+
+        .modal-close:hover {
+            border-color: var(--muted);
+            background: var(--white);
         }
 
         .project-modal img {
@@ -800,6 +855,11 @@
             .project-modal {
                 padding: 12px;
             }
+
+            .case-preview-hint {
+                right: 10px;
+                bottom: 10px;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -808,6 +868,13 @@
                 animation-duration: .01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: .01ms !important;
+            }
+        }
+
+        @media (hover: none) {
+            .case-preview-hint {
+                opacity: 1;
+                transform: none;
             }
         }
 
@@ -933,3 +1000,4 @@
             .post-content {
                 font-size: 16px;
             }
+        }
