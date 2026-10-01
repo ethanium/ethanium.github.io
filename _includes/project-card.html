@@ -6,5 +6,5 @@
     <div class="case-meta"><span class="case-type">{{ include.project.category | escape }}</span></div>
     <h3>{{ include.project.title | escape }}</h3>
     <p>{{ include.project.description | escape }}</p>
-    <a class="case-link" href="{{ include.project.url }}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{ include.project.title | escape }} website">Visit {{ include.project.link_label | default: include.project.title | escape }}</a>
+    <a class="case-link" href="{{ include.project.url }}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{ include.project.title | escape }} website (opens in a new tab)">Visit {{ include.project.link_label | default: include.project.title | escape }}</a>
 </article>
