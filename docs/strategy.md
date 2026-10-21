@@ -206,19 +206,19 @@ All targets are **Hypotheses** to be revised after the first 20 customers.
 | 31 to 60 | Self-serve signup and trial, import wizard, first three templates, pricing page, one comparison page, tracking for trial and activation events. |
 | 61 to 90 | Launch to past clients and network, first 20 customers, first four posts, partner outreach, review all section 8 metrics. |
 
-## 12. What this changes on the site (not done yet)
+## 12. What this changes on the site (partly done)
 
-No site files were changed. When prices are confirmed, these are the edits, with the rules from `DESIGN.md` applied:
+Status as of 2026-10-21: the pricing page is live, the nav shows Pricing in place of Blog, and the contact label is now "Request a demo". Rows marked **Done** are finished. The rest is still to do, with the rules from `DESIGN.md` applied:
 
 | Where | Today | Change |
 | --- | --- | --- |
 | `index.html` title and description (lines 3 to 4), `_config.yml` line 5 | "custom web portals" | Describe one product. |
 | `index.html` hero (lines 11 to 12) | "custom portals", "We help B2B teams" | Product language, still two lines and 20 words. |
 | `index.html` engagement section (lines 98 to 106) | "tailor the project around what your team needs. Ongoing support can be arranged separately." | Remove. This is consultancy language. Replace with the trial action. |
-| Every "Talk through a workflow" action (lines 14, 104) | Project inquiry | One label for one intent, for example "Start free trial" (or "Join the waitlist" until signup exists). |
+| Every "Talk through a workflow" action (lines 14, 104) | Project inquiry | **Done.** Now "Request a demo" on the homepage and pricing page, with "Choose Start", "Choose Grow", and "Choose Scale" on the plan cards. Switch to "Start free trial" once self-serve signup exists. |
 | `index.html` work section (lines 64 to 78) | "Ten projects across different industries" | Relabel as past work. Do not say "built with Ethanium Portal" unless true. |
-| `_includes/site-header.html` nav | Approach, Portfolio, Blog, Contact | Add Pricing before Contact. Keep the list short. |
-| New `pricing/` page | None | Show plans as a comparison table, not three equal cards (`DESIGN.md` bans that row), with the break-even table. Prices must be real by then. |
+| `_includes/site-header.html` nav | Approach, Portfolio, Blog, Contact | **Done.** Pricing replaced Blog. The blog stays at `/blog/` but is no longer linked from the nav. |
+| New `pricing/` page | None | **Done.** Three plan cards, with the full comparison table behind a disclosure. `DESIGN.md` records the pricing-card exception. The competitor break-even table is not published, because competitor prices are unverified third-party figures. |
 | New comparison and template pages | None | One page each, in the design system. |
 
 ## 13. Risks

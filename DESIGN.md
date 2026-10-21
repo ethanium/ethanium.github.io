@@ -326,7 +326,9 @@ more."
 **One label per intent.** Every action that leads to contacting Ethanium uses
 the same label across the page and the site (header, hero, sections, footer).
 The same applies to "see the work" actions. Two different labels for the same
-intent read as indecision.
+intent read as indecision. The site's contact label is "Request a demo". Picking
+a plan on `/pricing/` is a different intent, so plan cards use "Choose" followed
+by the plan name ("Choose Start") and never repeat one label three times.
 
 Button text must pass WCAG AA contrast (4.5:1) against the button, and a
 pressed state may use a subtle `transform: scale(0.98)`.
