@@ -958,19 +958,150 @@
         }
 
         .pricing-intro {
-            padding-block: 56px 48px;
+            padding-block: 56px 64px;
             background: var(--paper);
+            text-align: center;
+        }
+
+        .pricing-intro .section-heading,
+        .pricing-intro .section-intro {
+            margin-inline: auto;
         }
 
         .plans-section {
             background: var(--white);
         }
 
-        .plan-table-wrap {
-            margin-top: 40px;
-            overflow: hidden;
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .plan-card {
+            display: flex;
+            min-width: 0;
+            flex-direction: column;
+            padding: 40px 32px 32px;
             border-radius: 16px;
             background: var(--paper);
+        }
+
+        .plan-card h3 {
+            margin: 0;
+            font-family: var(--heading);
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.1;
+            letter-spacing: -.02em;
+        }
+
+        .plan-for {
+            margin: 8px 0 0;
+            color: var(--ink-soft);
+            font-size: 15px;
+        }
+
+        .plan-price {
+            margin: 32px 0 0;
+            font-family: var(--heading);
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.1;
+            letter-spacing: -.02em;
+        }
+
+        .plan-price span {
+            margin-left: 2px;
+            color: var(--ink-soft);
+            font-size: 17px;
+            font-weight: 500;
+            letter-spacing: 0;
+        }
+
+        .plan-save {
+            margin: 8px 0 0;
+            color: var(--ink-soft);
+            font-size: 14px;
+        }
+
+        .plan-features {
+            display: grid;
+            gap: 10px;
+            margin: 28px 0 32px;
+            padding: 0;
+            list-style: none;
+            font-size: 15px;
+        }
+
+        .plan-link {
+            display: inline-flex;
+            min-height: 44px;
+            align-items: center;
+            align-self: flex-start;
+            margin-top: auto;
+            color: var(--coral);
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .plan-link:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .plan-notes {
+            max-width: 680px;
+            margin-top: 40px;
+            color: var(--ink-soft);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .plan-notes p {
+            margin: 0 0 8px;
+        }
+
+        .compare-section {
+            background: var(--paper);
+        }
+
+        .compare {
+            margin-top: 24px;
+        }
+
+        .compare summary {
+            display: inline-flex;
+            min-height: 44px;
+            align-items: center;
+            color: var(--coral);
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .compare summary:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .compare .when-open,
+        .compare[open] .when-closed {
+            display: none;
+        }
+
+        .compare[open] .when-open {
+            display: inline;
+        }
+
+        .compare .plan-table-wrap {
+            margin-top: 20px;
+        }
+
+        .plan-table-wrap {
+            overflow: hidden;
+            border-radius: 16px;
+            background: var(--white);
         }
 
         .plan-table {
@@ -994,7 +1125,7 @@
         }
 
         .plan-table tbody tr:nth-child(even) {
-            background: var(--white);
+            background: var(--paper);
         }
 
         .plan-table tbody th {
@@ -1019,7 +1150,46 @@
             font-weight: 400;
         }
 
+        @media (max-width: 1068px) {
+            .plan-card {
+                padding: 32px 20px 24px;
+            }
+
+            .plan-card h3 {
+                font-size: 24px;
+            }
+
+            .plan-for {
+                min-height: 3em;
+            }
+
+            .plan-price {
+                font-size: 32px;
+            }
+        }
+
         @media (max-width: 734px) {
+            .pricing-intro {
+                padding-bottom: 48px;
+            }
+
+            .plan-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .plan-card {
+                padding: 32px 24px 16px;
+            }
+
+            .plan-for {
+                min-height: 0;
+            }
+
+            .plan-price {
+                font-size: 36px;
+            }
+
             .plan-table,
             .plan-table tbody,
             .plan-table tr,

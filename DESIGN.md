@@ -241,7 +241,11 @@ Layout rules borrowed from Taste Skill:
   look structurally different.
 - **No zigzag runs.** At most two consecutive image-and-text splits.
 - **No three equal feature cards in a row.** Use a list, a two-column split, or
-  an asymmetric grid instead.
+  an asymmetric grid instead. One exception: pricing plans on `/pricing/` sit in
+  three equal cards, because a plan is a distinct object that visitors compare
+  side by side, not a feature. Plan cards follow the same rules as other
+  surfaces: opposite-surface fill, `16px` radius, no borders, no badges, and one
+  text-link action each. The full comparison table stays behind a disclosure.
 - **No split section headers** (big headline on the left, small floating
   paragraph on the right) unless the right column holds something real. Stack
   heading and body instead.
