@@ -17,6 +17,10 @@ Open the local URL printed by Jekyll. To create a production build without servi
 
 Edit `_data/projects.yml`. Each project entry provides its title, category, description, screenshot, alt text, and external site URL. The homepage renders cards from that data.
 
+## Update pricing
+
+Edit `pricing/index.html`. Plan prices, limits, and features live in the comparison table; the table reflows into stacked rows on narrow screens, so keep a `data-label` on every cell. The reasoning behind the plans is in `docs/strategy.md`, which is excluded from the built site.
+
 ## Enable Google tag
 
 In `_config.yml`, set `google_tag_id` to the tag ID provided by Google, such as `G-XXXXXXXXXX` for Google Analytics or `AW-XXXXXXXXX` for Google Ads. Set `microsoft_clarity_id` to the Microsoft Clarity project ID. Both tags are added to every page through the shared layout.

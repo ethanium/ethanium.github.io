@@ -944,3 +944,132 @@
                 font-size: 16px;
             }
         }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .pricing-intro {
+            padding-block: 56px 48px;
+            background: var(--paper);
+        }
+
+        .plans-section {
+            background: var(--white);
+        }
+
+        .plan-table-wrap {
+            margin-top: 40px;
+            overflow: hidden;
+            border-radius: 16px;
+            background: var(--paper);
+        }
+
+        .plan-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+        }
+
+        .plan-table th,
+        .plan-table td {
+            padding: 16px 20px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .plan-table thead th {
+            padding-block: 24px 12px;
+            font-family: var(--heading);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .plan-table tbody tr:nth-child(even) {
+            background: var(--white);
+        }
+
+        .plan-table tbody th {
+            width: 34%;
+            font-weight: 500;
+        }
+
+        .plan-table td {
+            color: var(--ink-soft);
+        }
+
+        .plan-table .price-row td {
+            color: var(--ink);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .plan-unit {
+            display: block;
+            color: var(--ink-soft);
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        @media (max-width: 734px) {
+            .plan-table,
+            .plan-table tbody,
+            .plan-table tr,
+            .plan-table th,
+            .plan-table td {
+                display: block;
+            }
+
+            .plan-table thead {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                clip: rect(0 0 0 0);
+            }
+
+            .plan-table tbody tr {
+                padding: 16px;
+            }
+
+            .plan-table th,
+            .plan-table td {
+                padding: 0;
+            }
+
+            .plan-table tbody th {
+                width: auto;
+                padding-bottom: 8px;
+                font-weight: 600;
+            }
+
+            .plan-table td {
+                padding-block: 3px;
+            }
+
+            .plan-table td::before {
+                content: attr(data-label);
+                display: inline-block;
+                width: 4.5em;
+                color: var(--ink-soft);
+                font-size: 15px;
+                font-weight: 500;
+            }
+
+            .plan-table .price-row td {
+                font-size: 17px;
+            }
+
+            .plan-unit {
+                display: inline;
+                margin-left: .3em;
+            }
+        }
