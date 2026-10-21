@@ -272,6 +272,12 @@ conventions people already know: logo top-left linking home, navigation in the
 header, and `Contact` last, where the end of the list makes it easy to find
 and remember (Jakob's Law, Serial Position Effect).
 
+**Wordmark.** The brand link at the top left is set in lowercase (`ethanium`),
+matching the domain, email, and social handles. Everywhere else the name is
+written `Ethanium`: sentences, page titles, metadata, the footer, and product
+names such as `Ethanium Portal`. Lowercase at the start of a sentence reads as a
+typo, and search and social previews expect the standard spelling.
+
 ### Footer
 
 The footer mirrors Apple's global footer: `--white` background, `12px` text at
