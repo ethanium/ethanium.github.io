@@ -583,10 +583,11 @@
         }
 
         .project-modal {
-            width: min(1100px, calc(100% - 32px));
+            width: min(1920px, calc(100% - 32px));
             max-width: none;
             max-height: calc(100% - 32px);
-            padding: 24px;
+            padding: 16px;
+            overflow: auto;
             border: 0;
             border-radius: 16px;
             background: var(--paper);
@@ -596,6 +597,12 @@
 
         .project-modal::backdrop {
             background: rgb(0 0 0 / 35%);
+        }
+
+        .project-modal form {
+            position: sticky;
+            top: 8px;
+            z-index: 1;
         }
 
         .modal-close {
@@ -618,8 +625,7 @@
         .project-modal img {
             display: block;
             width: 100%;
-            max-height: calc(100vh - 110px);
-            object-fit: contain;
+            height: auto;
         }
 
         .project-modal p {
